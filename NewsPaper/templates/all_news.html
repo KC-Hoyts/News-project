@@ -1,0 +1,77 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_tags %}
+{% load custom_filters %}
+
+{% block title %}
+All news
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Все публикации</h1>
+    <h5>Отображено {{ All_News|length }} постов.</h5>
+
+    <hr>
+    {% if All_News %}
+        <table style="font-size: 13px">
+            <tr>
+                <td>Тип публикации:</td>
+                <td>Заголовок:</td>
+                <td>Дата публикации:</td>
+                <td>Категория:</td>
+                <td>Превью:</td>
+                <td>Автор:</td>
+                <td>Рейтинг:</td>
+
+            </tr>
+            {% for news in All_News %}
+
+            <tr>
+                <td>|{{ news.categoryType }}|</td>
+                <td ><a href="{{ news.id }}">|{{ news.title|censor }} |</a></td> <!-- Здесь целевое использование фильтра-->
+                <td>|{{ news.date_creation|date:"d F Y H:i" }}|</td> <!-- Проверка фильтра, если применяется не к тексту-->
+                <td>{% for cat in news.post_category.all %}
+                        -{{ cat.name }}-
+                     {% endfor %}
+                    </td>
+                <td>|{{ news.text|censor|truncatechars:20 }}|</td> <!-- Здесь тоже целевое использование фильтра-->
+                <td>|{{ news.author }}|</td>
+                <td>|{{ news.rating }}|</td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>Новостей пока что нет. :(</h2>
+    {% endif %}
+    <hr>
+    <!-- Добавляем пагинацию на страницу #}
+   {# Информация о предыдущих страницах #} -->
+
+    {% if page_obj.has_previous %}
+        <a href="?{% url_replace page=1 %}">В начало</a>
+        {% if page_obj.previous_page_number != 1 %}
+           ...
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+    {% endif %}
+
+    <!--  {# Информация о текущей странице #} -->
+     {{ page_obj.number }}
+
+    <!-- {# Информация о следующих страницах #} -->
+    {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}"> В конец</a>
+       {% endif %}
+   {% endif %}
+    </div>
+{% endblock content %}
+
+{% block page_info %}
+<h6 style="color: grey">Всего страниц: {{page_obj.paginator.num_pages }} </h6>
+
+{% endblock page_info %}

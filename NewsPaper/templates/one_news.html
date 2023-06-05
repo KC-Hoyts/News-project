@@ -1,0 +1,22 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+{{ One_News.title }}
+{% endblock title %}
+
+{% block content %}
+<h1>{{ One_News.title|censor }} </h1>
+<hr>
+<div style="text-align: right">
+    | <a style="font-size: 12px" href="{{One_News.id}}/edit/">Редактировать</a> |
+    <a style="font-size: 12px" href="{{One_News.id}}/delete/">Удалить</a> |
+</div>
+<h4> {{ One_News.date_creation|date:"d M Y" }} </h4>
+{{ One_News.text|censor }}
+
+<hr>
+
+
+
+{% endblock content %}
