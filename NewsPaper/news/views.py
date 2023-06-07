@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from .filters import PostFilter
-
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from datetime import datetime
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import PostForm, Post_ar_Form
@@ -53,7 +53,9 @@ class NewsSearch(ListView):
         self.filterset = PostFilter(self.request.GET, queryset)
         return self.filterset.qs
 
-class PostCreate(CreateView):   # через класс объявляем форму создания НОВОСТИ
+class PostCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):   # через класс объявляем форму создания НОВОСТИ
+    permission_required = ('news.add_post',)
+    raise_exception = True
     form_class = PostForm    #используется класс джанго CreateView, (из коробки)
     model = Post            # также для этого класса переопределяем метод get_absolute_url в моделях
     template_name = "post_edit.html"
@@ -64,7 +66,9 @@ class PostCreate(CreateView):   # через класс объявляем фо�
         news.categoryType = "NW"
         return super().form_valid(form)
 
-class PostArCreate(CreateView):   # через класс объявляем форму создания СТАТЬИ
+class PostArCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):   # через класс объявляем форму создания СТАТЬИ
+    permission_required = ('news.add_post',)
+    raise_exception = True
     form_class = Post_ar_Form    #используется класс джанго CreateView, (из коробки)
     model = Post            # также для этого класса переопределяем метод get_absolute_url в моделях
     template_name = "post_edit.html"
@@ -89,13 +93,15 @@ class PostArCreate(CreateView):   # через класс объявляем ф�
 #
 #     return render(request, "product_edit.html", {"form" : form})
 
-class PostUpdate(UpdateView):
+class PostUpdate(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post',)
     form_class = PostForm
     model = Post
     template_name = "post_edit.html"
 
 
-class PostDelete(DeleteView):
+class PostDelete(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post',)
     model = Post
     template_name = "post_delete.html"
     success_url = reverse_lazy('post_list')

@@ -9,8 +9,12 @@
 <h1>{{ One_News.title|censor }} </h1>
 <hr>
 <div style="text-align: right">
+    {% if perms.news.change_post %}
     | <a style="font-size: 12px" href="{{One_News.id}}/edit/">Редактировать</a> |
+    {% endif %}
+    {% if perms.news.delete_post %}
     <a style="font-size: 12px" href="{{One_News.id}}/delete/">Удалить</a> |
+    {% endif %}
 </div>
 <h4> {{ One_News.date_creation|date:"d M Y" }} </h4>
 {{ One_News.text|censor }}

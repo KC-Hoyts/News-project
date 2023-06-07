@@ -38,6 +38,7 @@
                             <a class="nav-link" href="/news/">Все посты</a>
                         </li>
 
+                        {% if perms.news.add_post %}
                         <li class="nav-item">
                             <a class="nav-link" href="/news/news/create/">Добавить новость</a>
                         </li>
@@ -45,13 +46,25 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/news/article/create/">Добавить статью</a>
                         </li>
+                        {% endif %}
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Вход |</a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Выход</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Регистрация</a>
+                        </li>
 
                     </ul>
 
                 </div>
-                <div class="collapse navbar-collapse" style="text-align: right; margin-right: -400px; ">
+                <div class="collapse navbar-collapse" style="text-align: right; margin-right: -200px; ">
                     <ul class="navbar-nav ml-auto" style="position: right">
                         <li class="nav-item">
                             <a class="nav-link" href="/news/search/">Поиск</a>
