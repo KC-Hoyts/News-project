@@ -7,13 +7,19 @@
 
 {% block content %}
 <h1>{{ One_News.title|censor }} </h1>
+<div style="text-align: right">
+    {% for cat in One_News.post_category.all %}
+    {{ cat.name }},
+    {% endfor %}
+
+</div>
 <hr>
 <div style="text-align: right">
     {% if perms.news.change_post %}
-    | <a style="font-size: 12px" href="{{One_News.id}}/edit/">Редактировать</a> |
+    | <a style="font-size: 12px" href="{% url 'post_update' One_News.id %}">Редактировать</a> |
     {% endif %}
     {% if perms.news.delete_post %}
-    <a style="font-size: 12px" href="{{One_News.id}}/delete/">Удалить</a> |
+    <a style="font-size: 12px" href="{% url 'post_delete' One_News.id%}">Удалить</a> |
     {% endif %}
 </div>
 <h4> {{ One_News.date_creation|date:"d M Y" }} </h4>

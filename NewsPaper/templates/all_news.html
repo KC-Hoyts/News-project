@@ -44,10 +44,10 @@ All news
                 <td>
                     <div style="text-align: right">
                         {% if perms.news.change_post %}
-                        | <a style="font-size: 12px" href="{{news.id}}/edit/">Редактировать</a> |
+                        | <a style="font-size: 12px" href="{% url 'post_update' news.id %}">Редактировать</a> |
                         {% endif %}
                         {% if perms.news.delete_post %}
-                        <a style="font-size: 12px" href="{{news.id}}/delete/">Удалить</a> |
+                        <a style="font-size: 12px" href="{% url 'post_delete' news.id %}">Удалить</a> |
                         {% endif %}
                     </div>
                 </td>

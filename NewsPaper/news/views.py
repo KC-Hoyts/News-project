@@ -8,6 +8,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .forms import PostForm, Post_ar_Form
 from django.urls import reverse_lazy
 
+from django.contrib.auth.decorators import login_required
+from django.db.models import Exists, OuterRef
+from django.views.decorators.csrf import csrf_protect
+
 
 class NewsList(ListView):
     model = Post
@@ -105,4 +109,5 @@ class PostDelete(PermissionRequiredMixin, DeleteView):
     model = Post
     template_name = "post_delete.html"
     success_url = reverse_lazy('post_list')
+
 

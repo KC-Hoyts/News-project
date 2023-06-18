@@ -68,7 +68,7 @@ class Post(models.Model):
 
 
     # def __str__(self):
-    #     return f'{self.title}: {self.text[:15]}...; Rating: {self.rating}.'
+    #     return f'|{self.title}: {self.text[:15]}...|'
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -90,3 +90,5 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+        
+

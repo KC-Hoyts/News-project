@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
+    'subscriptions',
+    "django_apscheduler",
+
 
 ]
 
@@ -153,7 +156,35 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #mandatory - вериф.обязательна, optional - вериф не обяз., none - не требуется
 LOGIN_REDIRECT_URL = "/news"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/main"
 ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
+
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True #сразу производит вход на сайт после перехода юзера из письма
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+
+#настройки почтового сервера для рассылок
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #для тестов можно выводить данные письма в консоль:
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    #используя этот класс
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "zh3rnakovk@yandex.com"
+EMAIL_HOST_PASSWORD = "hgdstptpvnnnpprl"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+DEFAULT_FROM_EMAIL = "zh3rnakovk@yandex.com"
+
+#--------------------
+# ящик-отправитель с которого будет направляться сообщение указанному списку менеджеров
+SERVER_EMAIL = "zh3rnakovk@yandex.com"
+MANAGERS = (
+    ('Kiushke', 'ga45k@mail.ru'),
+)
+EMAIL_SUBJECT_PREFIX = "Хэлло, манагер!"
+#то же, но для админов
+# ADMINS = (
+#     ('anton', 'anton@yandex.ru'),
+# )
+#--------------------
