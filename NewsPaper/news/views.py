@@ -1,16 +1,20 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, PostCategory
 from .filters import PostFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from datetime import datetime
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import PostForm, Post_ar_Form
 from django.urls import reverse_lazy
-
+import jsonpickle
 from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.views.decorators.csrf import csrf_protect
+
+from .tasks import notify_about_new_post
+from django.db.models.signals import post_save, m2m_changed
+from django.dispatch import receiver
 
 
 class NewsList(ListView):
@@ -69,6 +73,9 @@ class PostCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):   # �
         news = form.save(commit=False)
         news.categoryType = "NW"
         return super().form_valid(form)
+
+
+
 
 class PostArCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):   # через класс объявляем форму создания СТАТЬИ
     permission_required = ('news.add_post',)

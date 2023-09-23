@@ -128,7 +128,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = True # этим полем мы определяем для Django, что значение времени (например, поле модели типа DateTimeField)
+# будет записано в базу данных в той тайм-зоне, которая указана в настройке проекта Django в поле TIME_ZONE.
 
 
 # Static files (CSS, JavaScript, Images)
@@ -165,8 +166,8 @@ ACCOUNT_CONFIRM_EMAIL_ON_GET = True #сразу производит вход н
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 
 #настройки почтового сервера для рассылок
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #для тестов можно выводить данные письма в консоль:
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    #используя этот класс
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # используй это для рассылки на почту
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # или используй это для вывода в консоль
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "zh3rnakovk@yandex.com"
@@ -188,3 +189,14 @@ EMAIL_SUBJECT_PREFIX = "Хэлло, манагер!"
 #     ('anton', 'anton@yandex.ru'),
 # )
 #--------------------
+
+#Насйтроки Redis
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+#CELERYBEAT_SCHEDULE = 'django_celery_beat.schedulers:DatabaseScheduler'
+# CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+CELERY_ENABLE_UTC = False
+# CELERY_TIMEZONE = "Asia/Kolkata"

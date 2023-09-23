@@ -1,4 +1,4 @@
-#python3 manage.py runapscheduler
+#команда для запуска в терминале - python3 manage.py runapscheduler
 
 import logging
 
@@ -62,7 +62,7 @@ class Command(BaseCommand):
 
         scheduler.add_job(
             my_job,
-            trigger=CronTrigger(day_of_week="fri", minute="00", hour="18"),
+            trigger=CronTrigger(day_of_week="tue", minute="11", hour="19"),
             id="my_job",  # The `id` assigned to each job MUST be unique
             max_instances=1,
             replace_existing=True,
