@@ -1,0 +1,42 @@
+Watching for file changes with StatReloader
+"GET /news/?page=8 HTTP/1.1" 200 15762
+"GET /news/ HTTP/1.1" 200 15831
+D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /news/ HTTP/1.1" 200 15833
+"GET /news/ HTTP/1.1" 200 15833
+D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+INFO 2023-10-04 16:26:13,916 autoreload 7540 2260 Watching for file changes with StatReloader
+INFO 2023-10-04 16:27:01,126 autoreload 7540 2260 D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:27:03,654 INFO autoreload 7048 2284 Watching for file changes with StatReloader
+2023-10-04 16:27:16,342 INFO autoreload 7048 2284 D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:27:18,408: INFO autoreload 10004 6564 Watching for file changes with StatReloader
+2023-10-04 16:27:41,541: INFO autoreload 10004 6564 D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:27:43,644: INFO autoreload 4204 8100, message: Watching for file changes with StatReloader
+2023-10-04 16:28:02,468: INFO autoreload 4204 8100, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:28:04,457: INFO, autoreload, 9268, 5168, message: Watching for file changes with StatReloader
+2023-10-04 16:29:04,175: INFO, basehttp, 9268, 7708, message: "GET /news/ HTTP/1.1" 200 15833
+2023-10-04 16:36:45,261: INFO, autoreload, 9268, 5168, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:37:08,297: INFO, autoreload, 7504, 6604, message: Watching for file changes with StatReloader
+2023-10-04 16:37:18,534: INFO, autoreload, 7504, 6604, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:37:20,582: INFO, autoreload, 6600, 4904, message: Watching for file changes with StatReloader
+2023-10-04 16:37:34,029: INFO, basehttp, 6600, 6840, message: "GET /news/ HTTP/1.1" 200 15833
+2023-10-04 16:37:54,147: INFO, basehttp, 6600, 6840, message: "GET /admin/news/category/ HTTP/1.1" 200 12343
+2023-10-04 16:37:54,223: INFO, basehttp, 6600, 6840, message: "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2023-10-04 16:47:47,464: INFO, autoreload, 6600, 4904, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:47:49,434: INFO, autoreload, 8204, 6796, message: Watching for file changes with StatReloader
+2023-10-04 16:54:16,385: INFO, autoreload, 8204, 6796, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:54:18,999: INFO, autoreload, 3748, 3356, message: Watching for file changes with StatReloader
+2023-10-04 16:54:25,402: INFO, autoreload, 3748, 3356, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:54: INFO, autoreload, 8176, 9004, message: Watching for file changes with StatReloader
+2023-10-04 16:54: INFO, autoreload, 8176, 9004, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:55:00: INFO, autoreload, 9920, 4900, message: Watching for file changes with StatReloader
+2023-10-04 16:56:40: INFO, autoreload, 9920, 4900, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:56:44: INFO, autoreload, 1004, 9160, message: Watching for file changes with StatReloader
+2023-10-04 16:56:47: INFO, autoreload, 1004, 9160, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:56:50: INFO, autoreload, 7052, 2552, message: Watching for file changes with StatReloader
+2023-10-04 16:57:29: INFO, autoreload, 7052, 2552, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-10-04 16:57:54: INFO, autoreload, 8024, 6652, message: Watching for file changes with StatReloader
+2023-10-04 16:58:07: INFO, autoreload, 8024, 6652, message: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\NewsPaper\settings.py changed, reloading.

@@ -17,6 +17,8 @@ from django.db.models.signals import post_save, m2m_changed
 from django.dispatch import receiver
 
 
+
+
 class NewsList(ListView):
     model = Post
     ordering = '-date_creation'
@@ -40,6 +42,8 @@ class OneNews(DetailView):
     model = Post
     template_name = "one_news.html"
     context_object_name = "One_News"
+
+
 
 class NewsSearch(ListView):
     model = Post

@@ -4,6 +4,7 @@ from django.db.models import Sum
 from django.core.validators import MinValueValidator
 from django.urls import reverse
 
+
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
 

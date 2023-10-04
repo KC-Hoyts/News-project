@@ -9,12 +9,14 @@
         <!-- Favicon-->
         {% load static %}
         {% load custom_tags %}
+
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+
             <div class="container">
 
                 {% if user.username %}
@@ -91,6 +93,7 @@
 
 
             </div>
+
             <div>
                 <h1 style="text-align: right; margin-right: 30px; margin-top: 5px; color: #ffffff; font-size:12px;">{% current_time '%d %B %Y %A' %}</h1>
                 <h2 style="text-align: right; margin-right: 30px; color: #ffffff; font-size:10px;">{% current_time '%H:%M' %}</h2>

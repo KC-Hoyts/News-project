@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,6 +26,124 @@ SECRET_KEY = 'django-insecure-cz(r+9qsc_gu&0a(f)h*d54)9(tisn@bn2(ie-i301qs9rhdmu
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'style' : '{',
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        }
+    },
+
+    "formatters" : {
+        "console_DEBUG" : {
+            "format" : 'DEBUG:::%(asctime)s: %(levelname)s, message: %(message)s',
+            "datefmt" : '%Y-%m-%d %H:%M:%S'
+        },
+        "console_WARNING" : {
+            "format" : 'WARNING:::%(asctime)s: %(levelname)s, message: %(message)s;\nPath: %(pathname)s',
+            "datefmt" : '%Y-%m-%d %H:%M:%S'
+        },"console_ERROR" : {
+            "format" : 'ERROR:::%(asctime)s: %(levelname)s, message: %(message)s;\nPath: %(pathname)s\n%(exc_info)s',
+            "datefmt" : '%Y-%m-%d %H:%M:%S'
+        },
+        "console_CRITICAL" : {
+            "format" : 'CRITICAL:::%(asctime)s: %(levelname)s, message: %(message)s;\nPath: %(pathname)s\n%(exc_info)s',
+            "datefmt" : '%Y-%m-%d %H:%M:%S'
+        },
+        "console_INFO" : {
+            "format" : 'INFO:::%(asctime)s: %(levelname)s, %(module)s, message: %(message)s;',
+            "datefmt" : '%Y-%m-%d %H:%M:%S'
+        },
+        "mail" : {
+            "format" : 'ERROR:::%(asctime)s: %(levelname)s, message: %(message)s;\nPath: %(pathname)s',
+            "datefmt" : '%Y-%m-%d %H:%M:%S'
+        }
+    },
+
+
+    'loggers': {
+        'django': {
+            'handlers': ['console_DEBUG', 'console_WARNING', 'console_ERROR', 'console_CRITICAL', "log_INFO"],
+        },
+        "django.request" : {
+            'handlers': ['log_ERROR', 'log_CRITICAL', "mail_admin"],
+        },
+        "django.server" : {
+            'handlers': ['log_ERROR', 'log_CRITICAL', "mail_admin"],
+        },
+        "django.template" : {
+            'handlers': ['log_ERROR', 'log_CRITICAL'],
+        },
+        "django.db.backends" :{
+            'handlers': ['log_ERROR', 'log_CRITICAL'],
+        },
+        "django.security" : {
+            "handlers" : ["log_security"]
+        }
+
+    },
+
+    "handlers" : {
+        "console_DEBUG" : {
+            "level" : "DEBUG",
+            "class" : "logging.StreamHandler",
+            "formatter" : "console_DEBUG"
+        },
+        "console_WARNING" : {
+            "level" : "WARNING",
+            "class" : "logging.StreamHandler",
+            "formatter" : "console_WARNING"
+        },
+        "console_ERROR" : {
+            "level" : "ERROR",
+            "class" : "logging.StreamHandler",
+            "formatter" : "console_ERROR"
+        },
+        "console_CRITICAL" : {
+            "level" : "CRITICAL",
+            "class" : "logging.StreamHandler",
+            "formatter" : "console_CRITICAL"
+        },
+        "log_INFO" : {
+            "level" : "INFO",
+            "filters" : ['require_debug_false'],
+            "class" : "logging.FileHandler",
+            "filename" : "general.log",
+            "formatter" : "console_INFO"
+        },
+        "log_ERROR" : {
+            "level" : "ERROR",
+            "class" : "logging.FileHandler",
+            "filename" : "errors.log",
+            "formatter" : "console_ERROR"
+        },
+        "log_CRITICAL" : {
+            "level" : "CRITICAL",
+            "class" : "logging.FileHandler",
+            "filename" : "errors.log",
+            "formatter" : "console_CRITICAL"
+        },
+        "log_security" : {
+            "level" : "INFO",
+            "class" : "logging.FileHandler",
+            "filename" : "security.log",
+            "formatter" : "console_INFO"
+        },
+        "mail_admin" : {
+            "level" : "ERROR",
+            "filters" : ['require_debug_false'],
+            "class" : 'django.utils.log.AdminEmailHandler',
+            "formatter" : "mail"
+        },
+    }
+}
+
 
 ALLOWED_HOSTS = []
 
@@ -85,6 +204,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'NewsPaper.wsgi.application'
+
 
 
 # Database
