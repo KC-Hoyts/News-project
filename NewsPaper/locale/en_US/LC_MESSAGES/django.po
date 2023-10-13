@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-10 20:30+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\news\filters.py:10
+msgctxt "Кат"
+msgid "Категория"
+msgstr "Category"
+
+#: .\news\filters.py:17
+msgctxt "Заг"
+msgid "Заголовок"
+msgstr "Title"
+
+#: .\news\filters.py:22
+msgctxt "Тип"
+msgid "Тип публикации"
+msgstr "Post`s type"
+
+#: .\news\filters.py:31
+msgctxt "ДатИВр"
+msgid "Дата и время публикации после"
+msgstr "Date and time of post after"
+
+#: .\news\models.py:42
+msgctxt "Выпадающий список авторов"
+msgid "Автор"
+msgstr "Author"
+
+#: .\news\models.py:54
+msgctxt "Список категорий"
+msgid "Категория"
+msgstr "Category"
+
+#: .\news\models.py:55
+msgctxt "Ввод заголовка"
+msgid "Заголовок"
+msgstr "Post title"
+
+#: .\news\models.py:56
+msgctxt "Ввод текста поста"
+msgid "Текст поста"
+msgstr "Post content"
+
+#: .\templates\403.html:4
+msgid "Ошибка доступа"
+msgstr "Access error"
+
+#: .\templates\403.html:9
+msgid "УПС!"
+msgstr "Oops!"
+
+#: .\templates\403.html:10
+msgid "Кажется, у вас нет доступа для создания поста"
+msgstr "Seems you don`t have access to create post"
+
+#: .\templates\account\email\base_message.txt:1
+#, python-format
+msgid ""
+"\n"
+"Привет с сайта %(site_name)s!\n"
+msgstr ""
+
+#: .\templates\account\email\base_message.txt:3
+#, python-format
+msgid ""
+"\n"
+"Спасибо, что забегаете на наш сайт %(site_name)s!\n"
+"\n"
+"%(site_domain)s"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"Вы получили это сообщение, потому что пользователь %(user_display)s указал "
+"этот email при регистрации на сайте %(site_domain)s.\n"
+"\n"
+"Для подтверждения регистрации пройдите по ссылке %(activate_url)s\n"
+"\n"
+"Хорошего дня!\n"
+msgstr ""
+
+#: .\templates\all_news.html:12
+msgid "Все публикации"
+msgstr "All posts"
+
+#: .\templates\all_news.html:13
+msgid "Отображено"
+msgstr "Showed"
+
+#: .\templates\all_news.html:13
+msgid "постов"
+msgstr "posts"
+
+#: .\templates\all_news.html:19 .\templates\news_search.html:23
+msgid "Тип публикации"
+msgstr "Post`s type"
+
+#: .\templates\all_news.html:20 .\templates\news_search.html:24
+msgid "Заголовок"
+msgstr "Title"
+
+#: .\templates\all_news.html:21 .\templates\news_search.html:25
+msgid "Дата публикации"
+msgstr "Post`s date"
+
+#: .\templates\all_news.html:22 .\templates\news_search.html:26
+msgid "Категория"
+msgstr "Category"
+
+#: .\templates\all_news.html:23 .\templates\news_search.html:27
+msgid "Превью"
+msgstr "Preview"
+
+#: .\templates\all_news.html:24 .\templates\news_search.html:28
+msgid "Автор"
+msgstr "Author"
+
+#: .\templates\all_news.html:25
+msgid "Рейтинг"
+msgstr "Rating"
+
+#: .\templates\all_news.html:27 .\templates\news_search.html:30
+msgid "Действия"
+msgstr "Actions"
+
+#: .\templates\all_news.html:47 .\templates\news_search.html:50
+#: .\templates\one_news.html:20
+msgid "Редактировать"
+msgstr "Edit"
+
+#: .\templates\all_news.html:50 .\templates\news_search.html:53
+#: .\templates\one_news.html:23 .\templates\post_delete.html:10
+msgid "Удалить"
+msgstr "Delete"
+
+#: .\templates\all_news.html:59
+msgid "Новостей пока что нет"
+msgstr "There is no news yet"
+
+#: .\templates\all_news.html:66 .\templates\news_search.html:69
+msgid "В начало"
+msgstr "First page"
+
+#: .\templates\all_news.html:81 .\templates\news_search.html:84
+msgid "В конец"
+msgstr "Last page"
+
+#: .\templates\all_news.html:88
+msgid "Всего страниц:"
+msgstr "Total pages"
+
+#: .\templates\flatpages\default.html:25
+msgid "Приветствуем,"
+msgstr "Hello,"
+
+#: .\templates\flatpages\default.html:27
+msgid "Присоединитесь к сообществу авторов!"
+msgstr "Join to Authors community!"
+
+#: .\templates\flatpages\default.html:41
+msgid "На главную"
+msgstr "Home"
+
+#: .\templates\flatpages\default.html:47
+msgid "Все посты"
+msgstr "All posts"
+
+#: .\templates\flatpages\default.html:52 .\templates\subscriptions.html:5
+msgid "Подписки"
+msgstr "Subscriptions"
+
+#: .\templates\flatpages\default.html:59
+msgid "Добавить новость"
+msgstr "Add News"
+
+#: .\templates\flatpages\default.html:63
+msgid "Добавить статью"
+msgstr "Add article"
+
+#: .\templates\flatpages\default.html:71
+msgid "Вход"
+msgstr "Sign IN"
+
+#: .\templates\flatpages\default.html:76
+msgid "Выход"
+msgstr "Sign OUT"
+
+#: .\templates\flatpages\default.html:81
+msgid "Регистрация"
+msgstr "Sign UP"
+
+#: .\templates\flatpages\default.html:91
+msgid "Поиск"
+msgstr "Search"
+
+#: .\templates\flatpages\main.html:9
+msgid "Добро пожаловать на тестовый новостной портал!"
+msgstr "Welcome to testing NEWS PORTAL!"
+
+#: .\templates\news_search.html:7
+msgid "Поиск новостей"
+msgstr "News search"
+
+#: .\templates\news_search.html:11
+msgid "Поиск по публикациям"
+msgstr "Posts search"
+
+#: .\templates\news_search.html:17
+msgid "Начать поиск"
+msgstr "Start search"
+
+#: .\templates\news_search.html:62
+msgid "По Вашему запросу ничего не найдено"
+msgstr "Nothing was found for your request"
+
+#: .\templates\news_search.html:91
+msgid "Всего страниц"
+msgstr "Total pages"
+
+#: .\templates\post_delete.html:5
+msgid "Удаление поста"
+msgstr "Deleting post"
+
+#: .\templates\post_delete.html:9
+msgid "Удалить пост"
+msgstr "Delete post"
+
+#: .\templates\post_edit.html:5
+msgid "Редактирование"
+msgstr "Editing"
+
+#: .\templates\post_edit.html:11
+msgid "Редактирование поста"
+msgstr "Post editing"
+
+#: .\templates\post_edit.html:16
+msgid "Сохранить"
+msgstr "Save"
+
+#: .\templates\subscriptions.html:17 .\templates\subscriptions.html:20
+msgid "Подписаться"
+msgstr "Subscribe"
+
+#: .\templates\subscriptions.html:18 .\templates\subscriptions.html:21
+msgid "Отписаться"
+msgstr "Unsubscribe"

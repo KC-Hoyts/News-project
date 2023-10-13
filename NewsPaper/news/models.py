@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.core.validators import MinValueValidator
 from django.urls import reverse
-
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy # импортируем «ленивый» геттекст с подсказкой
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
@@ -36,7 +37,9 @@ class Author(models.Model):
 
 
 class Post(models.Model):
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author,
+                               on_delete=models.CASCADE,
+                               verbose_name=pgettext_lazy('Выпадающий список авторов', 'Автор'))
 
     NEWS = "NW"
     ARTICLE = "AR"
@@ -47,9 +50,10 @@ class Post(models.Model):
 
     categoryType = models.CharField(max_length=2, choices=CATEGORY_CHOISES, default=ARTICLE)
     date_creation = models.DateTimeField(auto_now_add=True)
-    post_category = models.ManyToManyField(Category, through="PostCategory")
-    title = models.CharField(max_length=128)
-    text = models.TextField()
+    post_category = models.ManyToManyField(Category, through="PostCategory",
+                                           verbose_name=pgettext_lazy('Список категорий', 'Категория'))
+    title = models.CharField(max_length=128, verbose_name=pgettext_lazy('Ввод заголовка', 'Заголовок'))
+    text = models.TextField(verbose_name=pgettext_lazy('Ввод текста поста', 'Текст поста'))
     rating = models.SmallIntegerField(default=0)
 
     def get_absolute_url(self):

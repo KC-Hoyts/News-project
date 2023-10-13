@@ -2,29 +2,29 @@
 
 {% load custom_tags %}
 {% load custom_filters %}
-
+{% load i18n %}
 {% block title %}
 All news
 {% endblock title %}
 
 {% block content %}
 
-    <h1>Все публикации</h1>
-    <h5>Отображено {{ All_News|length }} постов.</h5>
+    <h1>{% trans 'Все публикации'%}</h1>
+    <h5>{% trans 'Отображено'%} {{ All_News|length }} {% trans 'постов'%}.</h5>
 
     <hr>
     {% if All_News %}
         <table style="font-size: 13px">
             <tr>
-                <td>Тип публикации:</td>
-                <td>Заголовок:</td>
-                <td>Дата публикации:</td>
-                <td>Категория:</td>
-                <td>Превью:</td>
-                <td>Автор:</td>
-                <td>Рейтинг:</td>
+                <td>{% trans 'Тип публикации'%}:</td>
+                <td>{% trans 'Заголовок'%}:</td>
+                <td>{% trans 'Дата публикации'%}:</td>
+                <td>{% trans 'Категория'%}:</td>
+                <td>{% trans 'Превью'%}:</td>
+                <td>{% trans 'Автор'%}:</td>
+                <td>{% trans 'Рейтинг'%}:</td>
                 {% if perms.news.change_post or perms.news.delete_post %}
-                <td>Действия</td>
+                <td>{% trans 'Действия'%}</td>
                 {% endif %}
 
             </tr>
@@ -44,10 +44,10 @@ All news
                 <td>
                     <div style="text-align: right">
                         {% if perms.news.change_post %}
-                        | <a style="font-size: 12px" href="{% url 'post_update' news.id %}">Редактировать</a> |
+                        | <a style="font-size: 12px" href="{% url 'post_update' news.id %}">{% trans 'Редактировать'%}</a> |
                         {% endif %}
                         {% if perms.news.delete_post %}
-                        <a style="font-size: 12px" href="{% url 'post_delete' news.id %}">Удалить</a> |
+                        <a style="font-size: 12px" href="{% url 'post_delete' news.id %}">{% trans 'Удалить'%}</a> |
                         {% endif %}
                     </div>
                 </td>
@@ -56,14 +56,14 @@ All news
             {% endfor %}
         </table>
     {% else %}
-        <h2>Новостей пока что нет. :(</h2>
+        <h2>{% trans 'Новостей пока что нет'%}. :(</h2>
     {% endif %}
     <hr>
     <!-- Добавляем пагинацию на страницу #}
    {# Информация о предыдущих страницах #} -->
 
     {% if page_obj.has_previous %}
-        <a href="?{% url_replace page=1 %}">В начало</a>
+        <a href="?{% url_replace page=1 %}">{% trans 'В начало'%}</a>
         {% if page_obj.previous_page_number != 1 %}
            ...
             <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
@@ -78,13 +78,13 @@ All news
        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
        {% if paginator.num_pages != page_obj.next_page_number %}
            ...
-           <a href="?{% url_replace page=page_obj.paginator.num_pages %}"> В конец</a>
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}"> {% trans 'В конец'%}</a>
        {% endif %}
    {% endif %}
     </div>
 {% endblock content %}
 
 {% block page_info %}
-<h6 style="color: grey">Всего страниц: {{page_obj.paginator.num_pages }} </h6>
+<h6 style="color: grey">{% trans 'Всего страниц:'%} {{page_obj.paginator.num_pages }} </h6>
 
 {% endblock page_info %}

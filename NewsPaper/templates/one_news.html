@@ -1,5 +1,6 @@
 {% extends 'flatpages/default.html' %}
 {% load custom_filters %}
+{% load i18n %}
 
 {% block title %}
 {{ One_News.title }}
@@ -16,10 +17,10 @@
 <hr>
 <div style="text-align: right">
     {% if perms.news.change_post %}
-    | <a style="font-size: 12px" href="{% url 'post_update' One_News.id %}">Редактировать</a> |
+    | <a style="font-size: 12px" href="{% url 'post_update' One_News.id %}">{% trans 'Редактировать'%}</a> |
     {% endif %}
     {% if perms.news.delete_post %}
-    <a style="font-size: 12px" href="{% url 'post_delete' One_News.id%}">Удалить</a> |
+    <a style="font-size: 12px" href="{% url 'post_delete' One_News.id%}">{% trans 'Удалить'%}</a> |
     {% endif %}
 </div>
 <h4> {{ One_News.date_creation|date:"d M Y" }} </h4>

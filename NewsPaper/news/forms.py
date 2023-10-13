@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import Post
-
+from django.utils.translation import gettext as _
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -13,6 +13,12 @@ class PostForm(forms.ModelForm):
             'text',
 
         ]
+
+    #добавил сортировку категорий по алфавиту, на странице создания поста, чтоб было эстетичненько
+    def __init__(self, *args, **kwargs):
+        super(PostForm, self).__init__(*args, **kwargs)
+        self.user = kwargs.pop('user', None)
+        self.fields['post_category'].queryset = self.fields['post_category'].queryset.order_by('name')
 
     def clean(self):
         cleaned_data = super().clean()
@@ -27,9 +33,9 @@ class PostForm(forms.ModelForm):
         if title == text:
             raise ValidationError("Текст статьи не должен равняться заголовку!")
 
-        if title[0].islower() or len(title) > 20:
+        if title[0].islower() or len(title) > 30:
             raise ValidationError(
-                "Название должно начинаться с заглавной буквы и не должно быть длиннее 10 символов"
+                "Название должно начинаться с заглавной буквы и не должно быть длиннее 30 символов"
             )
 
         #после всех манипулиций возвращаем "проверенные" данные с помощью return
@@ -46,6 +52,12 @@ class Post_ar_Form(forms.ModelForm):
 
         ]
 
+    #добавил сортировку категорий по алфавиту, на странице создания поста, чтоб было эстетичненько
+    def __init__(self, *args, **kwargs):
+        super(Post_ar_Form, self).__init__(*args, **kwargs)
+        self.user = kwargs.pop('user', None)
+        self.fields['post_category'].queryset = self.fields['post_category'].queryset.order_by('name')
+
     def clean(self):
         cleaned_data = super().clean()
         #здесь и ниже указываем параметры которые хотим проверять. Заготовка  = cleaned_data.get("")
@@ -59,9 +71,9 @@ class Post_ar_Form(forms.ModelForm):
         if title == text:
             raise ValidationError("Текст статьи не должен равняться заголовку!")
 
-        if title[0].islower() or len(title) > 20:
+        if title[0].islower() or len(title) > 40:
             raise ValidationError(
-                "Название должно начинаться с заглавной буквы и не должно быть длиннее 10 символов"
+                "Название должно начинаться с заглавной буквы и не должно быть длиннее 40 символов"
             )
 
         if len(text) < 50 and categoryType == 'AR':

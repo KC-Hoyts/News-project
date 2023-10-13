@@ -1,0 +1,693 @@
+ERROR:::2023-10-09 19:48:39: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'\'%d %B %Y %A\'\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x0000018E5F4FBB08>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\templatetags\i18n.py", line 411, in do_translate
+    bits[0], option,
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: ''%d %B %Y %A''. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+ERROR:::2023-10-09 19:48:39: ERROR, message: "GET /news/ HTTP/1.1" 500 179997;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-09 19:49:41: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'\'%d %B %Y %A\'\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x0000018E5F355A88>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\templatetags\i18n.py", line 411, in do_translate
+    bits[0], option,
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: ''%d %B %Y %A''. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+ERROR:::2023-10-09 19:49:41: ERROR, message: "GET /news/ HTTP/1.1" 500 180041;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-09 19:49:43: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'\'%d %B %Y %A\'\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x0000018E5F34B808>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\templatetags\i18n.py", line 411, in do_translate
+    bits[0], option,
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: ''%d %B %Y %A''. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+ERROR:::2023-10-09 19:49:43: ERROR, message: "GET /news/ HTTP/1.1" 500 180041;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:24:20: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'current_time' received too many positional arguments"), <traceback object at 0x00000263B6060348>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 294, in parse_bits
+    unhandled_params.pop(0)
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 121, in compile_func
+    kwonly, kwonly_defaults, takes_context, function_name,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 299, in parse_bits
+    name)
+django.template.exceptions.TemplateSyntaxError: 'current_time' received too many positional arguments
+ERROR:::2023-10-10 16:24:20: ERROR, message: "GET /news/ HTTP/1.1" 500 192982;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:24:44: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'current_time' received too many positional arguments"), <traceback object at 0x000001B82A3D4788>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 294, in parse_bits
+    unhandled_params.pop(0)
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 121, in compile_func
+    kwonly, kwonly_defaults, takes_context, function_name,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 299, in parse_bits
+    name)
+django.template.exceptions.TemplateSyntaxError: 'current_time' received too many positional arguments
+ERROR:::2023-10-10 16:24:44: ERROR, message: "GET /news/ HTTP/1.1" 500 192982;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:44:14: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'locale.Error'>, Error('unsupported locale setting'), <traceback object at 0x000001675EE53308>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\templatetags\custom_tags.py", line 19, in current_time
+    locale.setlocale(locale.LC_TIME, 'ru_RU')
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\locale.py", line 608, in setlocale
+    return _setlocale(category, locale)
+locale.Error: unsupported locale setting
+ERROR:::2023-10-10 16:44:15: ERROR, message: "GET /news/ HTTP/1.1" 500 161467;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:44:58: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'locale.Error'>, Error('unsupported locale setting'), <traceback object at 0x000002044B74AA48>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\templatetags\custom_tags.py", line 20, in current_time
+    locale.setlocale(locale.LC_TIME, 'ru_RU')
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\locale.py", line 608, in setlocale
+    return _setlocale(category, locale)
+locale.Error: unsupported locale setting
+ERROR:::2023-10-10 16:44:58: ERROR, message: "GET /news/ HTTP/1.1" 500 161490;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:46:14: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'locale.Error'>, Error('unsupported locale setting'), <traceback object at 0x00000211C06E7288>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\templatetags\custom_tags.py", line 20, in current_time
+    locale.setlocale(locale.LC_TIME, 'ru_RU')
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\locale.py", line 608, in setlocale
+    return _setlocale(category, locale)
+locale.Error: unsupported locale setting
+ERROR:::2023-10-10 16:46:14: ERROR, message: "GET /news/ HTTP/1.1" 500 161436;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:46:44: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'locale.Error'>, Error('unsupported locale setting'), <traceback object at 0x00000186DF104E08>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\templatetags\custom_tags.py", line 20, in current_time
+    locale.setlocale(locale.LC_TIME, 'ru_RU')
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\locale.py", line 608, in setlocale
+    return _setlocale(category, locale)
+locale.Error: unsupported locale setting
+ERROR:::2023-10-10 16:46:44: ERROR, message: "GET /news/ HTTP/1.1" 500 161440;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 16:47:32: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'locale.Error'>, Error('unsupported locale setting'), <traceback object at 0x000002020CF36D48>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\templatetags\custom_tags.py", line 20, in current_time
+    locale.setlocale(locale.LC_ALL, 'ru_RU')
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\locale.py", line 608, in setlocale
+    return _setlocale(category, locale)
+locale.Error: unsupported locale setting
+ERROR:::2023-10-10 16:47:32: ERROR, message: "GET /news/ HTTP/1.1" 500 161438;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-10 17:04:10: ERROR, message: Internal Server Error: /main/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 9: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x000001C3FEB75B08>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\contrib\flatpages\middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\contrib\flatpages\views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\contrib\flatpages\views.py", line 59, in render_flatpage
+    template = loader.select_template((f.template_name, DEFAULT_TEMPLATE))
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+ERROR:::2023-10-10 17:04:10: ERROR, message: "GET /main/ HTTP/1.1" 500 163992;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-13 16:27:11: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not parse the remainder: '=' from '='"), <traceback object at 0x00000249A81167C0>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\smartif.py", line 175, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: '='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\views.py", line 48, in get
+    return HttpResponse(render(request, 'all_news.html', context))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\defaulttags.py", line 817, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\defaulttags.py", line 900, in __init__
+    super().__init__(*args, **kwargs)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\smartif.py", line 166, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\smartif.py", line 177, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\defaulttags.py", line 903, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=' from '='
+ERROR:::2023-10-13 16:27:11: ERROR, message: "GET /news/ HTTP/1.1" 500 234546;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR:::2023-10-13 16:31:30: ERROR, message: Internal Server Error: /news/;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\utils\log.py
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Unused 'selected' at end of if expression."), <traceback object at 0x00000249A830D600>)
+Traceback (most recent call last):
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\NewsPaper\news\views.py", line 48, in get
+    return HttpResponse(render(request, 'all_news.html', context))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\defaulttags.py", line 817, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\template\smartif.py", line 193, in parse
+    raise self.error_class("Unused '%s' at end of if expression." %
+django.template.exceptions.TemplateSyntaxError: Unused 'selected' at end of if expression.
+ERROR:::2023-10-13 16:31:30: ERROR, message: "GET /news/ HTTP/1.1" 500 208438;
+Path: D:\Desktop\Web deveopment studying\Skillfactory\DjangoProjects\002_news_project\venv\Lib\site-packages\django\core\servers\basehttp.py
+None

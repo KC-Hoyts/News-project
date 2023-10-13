@@ -1,0 +1,3 @@
+INFO:::2023-10-10 18:57:53: WARNING, log, message: Forbidden (CSRF token missing or incorrect.): /admin/login/;
+INFO:::2023-10-10 18:57:56: WARNING, log, message: Forbidden (CSRF token missing or incorrect.): /admin/login/;
+INFO:::2023-10-10 18:58:28: WARNING, log, message: Forbidden (CSRF token missing or incorrect.): /admin/login/;

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, PostCategory
+from .models import Post, PostCategory, Category, Comment
 from .filters import PostFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from datetime import datetime
@@ -12,10 +12,10 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.views.decorators.csrf import csrf_protect
 
-from .tasks import notify_about_new_post
+#from .tasks import notify_about_new_post
 from django.db.models.signals import post_save, m2m_changed
 from django.dispatch import receiver
-
+from django.utils.translation import gettext as _
 
 
 
@@ -36,6 +36,14 @@ class NewsList(ListView):
         queryset = super().get_queryset()
         self.filterset = PostFilter(self.request.GET, queryset)
         return self.filterset.qs
+
+    def get(self, request):
+        # . Translators: This message appears on the home page only
+        postmodels = Post.objects.all().order_by('-date_creation')
+        context = {
+            'All_News': postmodels,
+        }
+        return HttpResponse(render(request, 'all_news.html', context))
 
 
 class OneNews(DetailView):
@@ -77,8 +85,6 @@ class PostCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):   # �
         news = form.save(commit=False)
         news.categoryType = "NW"
         return super().form_valid(form)
-
-
 
 
 class PostArCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):   # через класс объявляем форму создания СТАТЬИ

@@ -1,31 +1,33 @@
 {% extends 'flatpages/default.html' %}
 {% load custom_filters %}
 {% load custom_tags %}
+{% load i18n %}
+
 {% block title %}
-Поиск новостей
+{% trans 'Поиск новостей'%}
 {% endblock title %}
 
 {% block content %}
-<h1> Поиск по публикациям </h1>
+<h1> {% trans 'Поиск по публикациям'%} </h1>
 
 <form action="" method="get">
         <!-- Переменная, которую мы передали через контекст, может сгенерировать нам форму с полями-->
         <inpiut class="form-control"> {{ filterset.form.as_p }} </inpiut>
         <!-- Добавим кнопку отправки данных формы -->
-        <input type="submit" value="начать поиск" class="form-control"/>
+        <input type="submit" value="{% trans 'Начать поиск'%}" class="form-control"/>
 
 </form>
 {% if News_search %}
         <table style="font-size: 13px">
             <tr>
-                <td>Тип публикации:</td>
-                <td>Заголовок:</td>
-                <td>Дата публикации:</td>
-                <td>Категория:</td>
-                <td>Превью:</td>
-                <td>Автор:</td>
+                <td>{% trans 'Тип публикации'%}:</td>
+                <td>{% trans 'Заголовок'%}:</td>
+                <td>{% trans 'Дата публикации'%}:</td>
+                <td>{% trans 'Категория'%}:</td>
+                <td>{% trans 'Превью'%}:</td>
+                <td>{% trans 'Автор'%}:</td>
                 {% if perms.news.change_post or perms.news.delete_post %}
-                <td>Действия</td>
+                <td>{% trans 'Действия'%}</td>
                 {% endif %}
 
 
@@ -45,10 +47,10 @@
                     <!-- Здесь реализована ссылка через переменную news и атрибут id (т.к. news исползуется в цикле) -->
                     <div style="text-align: right">
                         {% if perms.news.change_post %}
-                        | <a style="font-size: 12px" href="../{{news.id}}/edit/">Редактировать</a> |
+                        | <a style="font-size: 12px" href="../{{news.id}}/edit/">{% trans 'Редактировать'%}</a> |
                         {% endif %}
                         {% if perms.news.delete_post %}
-                        <a style="font-size: 12px" href="../{{news.id}}/delete/">Удалить</a> |
+                        <a style="font-size: 12px" href="../{{news.id}}/delete/">{% trans 'Удалить'%}</a> |
                         {% endif %}
                     </div>
                 </td>
@@ -57,14 +59,14 @@
             {% endfor %}
         </table>
     {% else %}
-        <h2>По Вашему запросу ничего не найдено :(</h2>
+        <h2>{% trans 'По Вашему запросу ничего не найдено'%} :(</h2>
     {% endif %}
 
     <!-- Добавляем пагинацию на страницу #}
    {# Информация о предыдущих страницах #} -->
 
     {% if page_obj.has_previous %}
-        <a href="?{% url_replace page=1 %}">В начало</a>
+        <a href="?{% url_replace page=1 %}">{% trans 'В начало'%}</a>
         {% if page_obj.previous_page_number != 1 %}
            ...
             <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
@@ -79,12 +81,12 @@
        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
        {% if paginator.num_pages != page_obj.next_page_number %}
            ...
-           <a href="?{% url_replace page=page_obj.paginator.num_pages %}"> В конец</a>
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}"> {% trans 'В конец'%}</a>
        {% endif %}
    {% endif %}
     </div>
 {% endblock content %}
 
 {% block page_info %}
-<h6 style="color: grey">Всего страниц: {{page_obj.paginator.num_pages }} </h6>
+<h6 style="color: grey">{% trans 'Всего страниц'%}: {{page_obj.paginator.num_pages }} </h6>
 {% endblock page_info %}
