@@ -11,6 +11,7 @@
         {% load static %}
         {% load custom_tags %}
         {% load i18n %}
+        {% load tz %}
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -19,7 +20,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 
-            <div class="container">
+            <div class="container" style="margin-right: 5px; margin-bottom: -15px; padding-right: 5px; ">
 
                 {% if user.username %}
                 <a class="navbar-brand">{% trans 'Приветствуем,'%} {{ user.username }}!</a>
@@ -64,6 +65,7 @@
                         </li>
                         {% endif %}
                     </ul>
+
                     <ul class="navbar-nav ml-auto">
 
                         {% if not user.username %}
@@ -81,44 +83,40 @@
                             <a class="nav-link" href="{% url 'account_signup' %}">{% trans 'Регистрация'%}</a>
                         </li>
                         {% endif %}
-
-                    </ul>
-
-                </div>
-                <div class="collapse navbar-collapse" style="text-align: right; margin-right: -200px; ">
-                    <ul class="navbar-nav ml-auto" style="position: right">
                         <li class="nav-item">
                             <a class="nav-link" href="/news/search/">{% trans 'Поиск'%}</a>
                         </li>
                     </ul>
                 </div>
-                <!-- Панель выбора языка начало -->
-                <ul style="font-size: 10px; text-align: right;">
-                    <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
-                        <input type="hidden" name="next" value="{{ redirect_to }}">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            <select name="language" id="">
-                            {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
-                            {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
 
-                            {% for language in languages %} <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
-                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                                    {{ language.name_local }} - {{ language.code }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                        <input type="submit" value="set">
-                    </form>
+                <!-- Контейнер выбора языка и часового пояса-->
+                <ul style="padding-left: 0px; margin-left: 15px">
+                    <!-- Панель выбора языка начало -->
+                    <li style="font-size: 10px; text-align: right;">
+                        <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
+                            <input type="hidden" name="next" value="{{ redirect_to }}">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                <label for="language" style=" color: white; font-size: 12px">{% trans "Сменить язык"%}:</label>
+                                <select name="language" id="">
+                                    {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
+                                    {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
+
+                                    {% for language in languages %} <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
+                                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                        {{ language.name_local }} - {{ language.code }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            <input type="submit" value="Ок">
+                        </form>
+                    </li>
+                    <!-- Панель выбора языка конец -->
+
+                    {% block time_z %}
+                    {% endblock time_z %}
+
+
                 </ul>
-                <!-- Панель выбора языка конец -->
-
-
-            </div>
-
-            <div>
-                <h1 style="text-align: right; margin-right: 30px; margin-top: 5px; color: #ffffff; font-size:12px;">{% current_time '%d %B %Y %A' %}</h1>
-
-                <h2 style="text-align: right; margin-right: 30px; color: #ffffff; font-size:10px;">{% current_time '%H:%M' %}</h2>
             </div>
         </nav>
 

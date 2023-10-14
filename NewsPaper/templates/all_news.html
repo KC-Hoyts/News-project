@@ -3,9 +3,43 @@
 {% load custom_tags %}
 {% load custom_filters %}
 {% load i18n %}
+{% load tz %}
+
 {% block title %}
 All news
 {% endblock title %}
+
+{% block time_z %}
+<!-- Смена тёмной и светлой темы -->
+<style>
+    body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} darkcyan {% else %} powderblue {% endif %};}
+</style>
+<!-- Панель выбора часового пояса начало -->
+<ul style="padding-left: 0px; margin-left: 15px">
+    <li style="font-size: 10px; text-align: right;">
+        {% get_current_timezone as TIME_ZONE %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="timezone" style=" color: white; font-size: 12px">{% trans "Часовой пояс"%}:</label>
+            <select name="timezone">
+                {% for tz in timezones %}
+                <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Ok">
+        </form>
+    </li>
+    <a style="color: #ffffff; text-align: right; font-size: 12px">
+        <label style=" color: white; font-size: 12px;">{% trans "Местное время"%}:</label>
+        {{ current_time|timezone:TIME_ZONE}}
+    </a>
+</ul>
+<!-- Панель выбора часового пояса конец -->
+
+
+
+
+{% endblock time_z %}
 
 {% block content %}
 
