@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 from .models import Post, PostCategory, Category, Comment
 from .filters import PostFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -32,7 +32,6 @@ class NewsList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
-        #print(f"ЭТО КОНТКСТ ========{context}=======")
         return context
 
     def get_queryset(self):
@@ -45,11 +44,10 @@ class NewsList(ListView):
     def get(self, request):
         # . Translators: This message appears on the home page only
         curent_time = timezone.now()
-        print(curent_time)
         postmodels = Post.objects.all().order_by('-date_creation')
         context = {
             'All_News': postmodels,
-            'current_time': timezone.now(),
+            'current_time': timezone.localtime(timezone.now()),
             'timezones': pytz.common_timezones  # добавляем в контекст все доступные часовые пояса
         }
         return HttpResponse(render(request, 'all_news.html', context))
@@ -61,9 +59,30 @@ class NewsList(ListView):
 
 
 class OneNews(DetailView):
-    model = Post
+    model = Post, Comment
     template_name = "one_news.html"
     context_object_name = "One_News"
+
+
+    # функциф настройки часового пояса начало
+    def get(self, request, pk):
+        context = {
+            "comments" : Comment.objects.filter(comment_post=Post.objects.get(pk=pk)).values('id','date_creation',
+                                                                                           'comment_user__username',
+                                                                                           'rating', 'text'),
+            "One_News" : Post.objects.get(pk=pk),
+            'current_time': timezone.localtime(timezone.now()),
+            'timezones': pytz.common_timezones  # добавляем в контекст все доступные часовые пояса
+        }
+        return HttpResponse(render(request, 'one_news.html', context))
+
+    def post(self, request, pk, **kwargs):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('post_view', pk=pk)
+    # функциф настройки часового пояса конец
+
+
+
 
 
 class NewsSearch(ListView):
@@ -76,9 +95,6 @@ class NewsSearch(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
-        #print(f"ЭТО КОНТКСТ ========{context}=======")
-
-
         return context
 
     def get_queryset(self):

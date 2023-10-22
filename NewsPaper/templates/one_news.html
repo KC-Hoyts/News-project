@@ -1,5 +1,6 @@
 {% extends 'flatpages/default.html' %}
 {% load custom_filters %}
+{% load custom_tags %}
 {% load i18n %}
 
 {% block title %}
@@ -7,27 +8,97 @@
 {% endblock title %}
 
 {% block content %}
-<h1>{{ One_News.title|censor }} </h1>
-<div style="text-align: right">
-    {% for cat in One_News.post_category.all %}
-    {{ cat.name }},
-    {% endfor %}
+    <h1>{{ One_News.title|censor }} </h1>
+    <div style="color: #BBBBBB">
+        <tr>
+            <td style="text-align: left">
+                {% trans "Рейтинг"%}: {{ One_News.rating }}
+            </td>
+            <td>
+                 -----------------------
+            </td>
+            <td>
+                 {{ One_News.date_creation|date:"d M Y H:i" }}
+            </td>
+            <td>
+                 -----------------------
+            </td>
 
-</div>
-<hr>
-<div style="text-align: right">
-    {% if perms.news.change_post %}
-    | <a style="font-size: 12px" href="{% url 'post_update' One_News.id %}">{% trans 'Редактировать'%}</a> |
+            <td style="text-align: right">
+                {% for cat in One_News.post_category.all %}
+                {{ cat.name }},
+                {% endfor %}
+            </td>
+        </tr>
+
+
+    </div>
+    <hr>
+    <div style="text-align: right">
+        {% if perms.news.change_post %}
+        | <a style="font-size: 12px" href="{% url 'post_update' One_News.id %}">{% trans 'Редактировать'%}</a> |
+        {% endif %}
+        {% if perms.news.delete_post %}
+        <a style="font-size: 12px" href="{% url 'post_delete' One_News.id%}">{% trans 'Удалить'%}</a> |
+        {% endif %}
+    </div>
+
+    <p style="font-size: 25px">{{ One_News.text|censor }}</p>
+    <br>
+    <hr>
+    {% if comments %}
+        <h3>{% trans "Комментарии"%}:</h3>
+
+        {% for com in comments %}
+            <table style="line-color: #FFFFFF; position: center; border:3px solid #E73134">
+
+                <tr style="font-size: 9px; text-align: left">
+                    <td>----------{{ com.date_creation }}----------{{ com.comment_user__username }}----------</td>
+                </tr>
+
+                <tr style="font-size: 15px; text-align: left">
+                    <td>{{ com.text }}</td>
+                </tr>
+
+                <tr style="font-size: 9px; text-align: right">
+                    <td>
+                        <input type="submit" value="Like">
+                        <input type="submit" value="Dislike">
+                    </td>
+                    <td>{{ com.rating }} {% trans "лайков" %}</td>
+                </tr>
+
+            </table>
+            <br>
+        {% endfor %}
+    {% else %}
+        <h3>{% trans "Комментариев нет пока что нет. Станьте первым"%}!</h3>
     {% endif %}
-    {% if perms.news.delete_post %}
-    <a style="font-size: 12px" href="{% url 'post_delete' One_News.id%}">{% trans 'Удалить'%}</a> |
-    {% endif %}
-</div>
-<h4> {{ One_News.date_creation|date:"d M Y" }} </h4>
-{{ One_News.text|censor }}
 
-<hr>
-
-
-
+    <hr>
+    <tr>
+        <td>
+            <a style="-moz-appearance: button;
+            -ms-appearance: button;
+            -o-appearance: button;
+            -webkit-appearance: button;
+            appearance: button;
+            text-decoration: #FFFFFF;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 0.2em 0.4em;" href="{% previous_post %}"> {% if previous_page == 0 %} Вы на первом посте {% else %} {{ previous_page }} {% endif %}</a>
+        </td>
+        <td> | </td>
+        <td>
+            <a style="-moz-appearance: button;
+            -ms-appearance: button;
+            -o-appearance: button;
+            -webkit-appearance: button;
+            appearance: button;
+            text-decoration: #FFFFFF;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 0.2em 0.4em;" href="{% next_post %}">{% if next_page == 0 %} Вы на последнем посте {% else %} {{ next_page }} {% endif %}</a>
+        </td>
+    </tr>
 {% endblock content %}

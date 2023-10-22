@@ -1,4 +1,5 @@
 from django import template
+from news.models import Post, Comment
 
 register = template.Library()
 
@@ -10,7 +11,6 @@ def censor(value):
     #value = 'Привет ворлд, тест. Ты тест1, если поддерживаешь ТЕСТ2. Тест3 это ваше, тест4.'
     #print('======='*10)
     #print(value)      #для просмотра исходного текста в консоли
-
 
     if isinstance(value, str):          # разбиваем исходный текст на слова и символы (знаки препинания)
         temp_array = []
@@ -48,3 +48,7 @@ def censor(value):
         print('Текст не подлежит модерации, т.к. не является текстом!')
         return value
 
+@register.filter()
+def com_quan(one_post):
+    comments_quantity = Comment.objects.filter(comment_post=Post.objects.get(pk=one_post.id))
+    return len(comments_quantity)

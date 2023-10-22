@@ -17,6 +17,7 @@
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
+
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 
@@ -111,11 +112,32 @@
                         </form>
                     </li>
                     <!-- Панель выбора языка конец -->
-
-                    {% block time_z %}
-                    {% endblock time_z %}
-
-
+                    <!-- Панель выбора часового пояса начало -->
+                    <ul style="padding-left: 0px; margin-left: 15px">
+                        <li style="font-size: 10px; text-align: right;">
+                            {% get_current_timezone as TIME_ZONE %}
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <label for="timezone" style=" color: white; font-size: 12px">{% trans "Часовой пояс"%}:</label>
+                                <select name="timezone">
+                                    {% for tz in timezones %}
+                                    <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                                    {% endfor %}
+                                </select>
+                                <input type="submit" value="Ok">
+                            </form>
+                        </li>
+                        <a style="color: #ffffff; text-align: right; font-size: 12px">
+                            <label style=" color: white; font-size: 12px;">{% trans "Местное время"%}:</label>
+                            {{ current_time|timezone:TIME_ZONE}}
+                        </a>
+                    </ul>
+                        <!-- Смена тёмной и светлой темы -->
+                        <style>
+                            body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} #001B45 {% else %} #FFFF88 {% endif %};}
+                            body {color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} #CFCFCF {% else %} #000000 {% endif %};}
+                        </style>
+                    <!-- Панель выбора часового пояса конец -->
                 </ul>
             </div>
         </nav>
